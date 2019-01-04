@@ -4,7 +4,7 @@
 # Autor: Yuri Crisostomo Bernardo
 #>
 
-#$start = Get-Date
+$start = Get-Date
 
 $pwd  = ConvertTo-SecureString "5TH6zYwOyXNz99" -AsPlainText -Force
 $cred = New-Object Management.Automation.PSCredential ('mon_zabbix', $pwd)
@@ -36,6 +36,6 @@ foreach($vHostName in $vHost.name){
 $jsonData = @{"data" = $json}
 Write-Host $($jsonData | ConvertTo-Json -Compress) #| ConvertFrom-Json
 
-#$finish = Get-Date
-#$runTime = $finish - $start
-#$runTime.TotalSeconds
+$finish = Get-Date
+$runTime = $finish - $start
+$runTime.TotalSeconds
